@@ -1,4 +1,4 @@
-package com.thoughtworks.capability.gtb.vo;
+package com.thoughtworks.capability.gtb.Serializer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
@@ -13,8 +13,6 @@ public class AgeSerializer extends StdSerializer<Integer> {
 
     @Override
     public void serialize(Integer age, JsonGenerator gen, SerializerProvider provider) throws IOException {
-        if (age == null) {
-            gen.writeNumber(0);
-        }
+        gen.writeNumber(0);
     }
 }

@@ -1,8 +1,9 @@
 package com.thoughtworks.capability.gtb.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.thoughtworks.capability.gtb.Serializer.AgeSerializer;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -10,7 +11,9 @@ import lombok.NoArgsConstructor;
 public class PersonVo {
 
   private String id;
+  @JsonSerialize(nullsUsing = AgeSerializer.class)
   private Integer age;
   private String name;
+  @JsonIgnore
   private String hobby;
 }
