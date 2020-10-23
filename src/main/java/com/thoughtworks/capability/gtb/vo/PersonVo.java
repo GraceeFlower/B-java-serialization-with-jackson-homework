@@ -1,6 +1,6 @@
 package com.thoughtworks.capability.gtb.vo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.thoughtworks.capability.gtb.Serializer.AgeSerializer;
 import lombok.*;
@@ -14,6 +14,6 @@ public class PersonVo {
   @JsonSerialize(nullsUsing = AgeSerializer.class)
   private Integer age;
   private String name;
-  @JsonIgnore
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private String hobby;
 }
